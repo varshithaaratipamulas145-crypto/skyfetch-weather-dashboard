@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -35,6 +35,52 @@ h1 {
     margin-bottom: 30px;
     font-size: 1rem;
 }
+
+/* ============================= */
+/* Search Section */
+/* ============================= */
+
+.search-section {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+#city-input {
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 2px solid #ddd;
+    flex: 1;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+#city-input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 8px rgba(102, 126, 234, 0.4);
+}
+
+#search-btn {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s ease;
+}
+
+#search-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* ============================= */
+/* Weather Display */
+/* ============================= */
 
 #weather-display {
     margin-top: 30px;
@@ -84,44 +130,77 @@ h1 {
     width: 100px;
     height: 100px;
 }
+
 /* ============================= */
-/* Search Section Styling */
+/* Forecast Section */
 /* ============================= */
 
-.search-section {
-    margin-bottom: 30px;
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+.forecast-section {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 2px solid #eee;
 }
 
-#city-input {
-    padding: 12px 20px;
-    border-radius: 25px;
-    border: 2px solid #ddd;
-    flex: 1;
-    font-size: 1rem;
-    outline: none;
-    transition: 0.3s ease;
+.forecast-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
 }
 
-#city-input:focus {
-    border-color: #667eea; /* matches your gradient theme */
-    box-shadow: 0 0 8px rgba(102, 126, 234, 0.4);
+/* Grid Layout */
+.forecast-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
 }
 
-#search-btn {
-    padding: 12px 30px;
+/* Forecast Card */
+.forecast-card {
     background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 1rem;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
     transition: 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-#search-btn:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
+.forecast-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.25);
+}
+
+.forecast-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.forecast-card img {
+    width: 60px;
+    height: 60px;
+}
+
+.forecast-temp {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.forecast-desc {
+    font-size: 0.9rem;
+    text-transform: capitalize;
+}
+
+/* ============================= */
+/* Responsive */
+/* ============================= */
+
+@media (max-width: 768px) {
+    .forecast-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .forecast-card {
+        padding: 15px;
+    }
 }
