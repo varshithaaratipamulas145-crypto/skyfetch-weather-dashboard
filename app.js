@@ -208,3 +208,5 @@ WeatherApp.prototype.showError = function(message) {
 // Create App Instance
 // =====================================
 const app = new WeatherApp('2d526502b4edcc24cbdee29970299226');
+console.log("Updated version 4");
+
